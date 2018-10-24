@@ -1,6 +1,9 @@
 package com.demo.controllers;
 
 import java.util.Date;
+
+import javax.validation.Valid;
+
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.WebDataBinder;
 
@@ -86,10 +89,22 @@ public class AccountController {
 	
 	
 	
-	@RequestMapping(value = "save", method = RequestMethod.POST)
-	public String save(@ModelAttribute("account") Account account, ModelMap modelMap) {
-		modelMap.put("account", account);
-		return "account/success";
+//	@RequestMapping(value = "save", method = RequestMethod.POST)
+//	public String save(@ModelAttribute("account") Account account, ModelMap modelMap) {
+//		modelMap.put("account", account);
+//		return "account/success";
+//	}
+	
+	public String save(@ModelAttribute(value = "account") @Valid Account account, BindingResult bindingResult, ModelMap modelMap) {
+		AccountValidator accountValidator = new AccountValidator();
+		accountValidator.validate(account, bindingResult);
+		if (bindingResult.hasErrors()) {
+			return "account/index";
+		} else {
+			modelMap.put("account", account);
+			return "account/success";
+		}
 	}
+	
 	
 }
