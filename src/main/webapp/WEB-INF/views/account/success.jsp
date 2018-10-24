@@ -21,6 +21,16 @@
 			<td>Full Name</td>
 			<td>${account.fullName }</td>
 		</tr>
+
+		<tr>
+			<td>Role Name</td>
+			<td>${account.role.name }</td>
+		</tr>
+		<tr>
+		<td>Birthday </td>
+			<td><fmt:formatDate var="birthday" value="${account.birthday }"
+					pattern="MM/dd/yyyy" /> ${birthday }</td>
+		</tr>
 	</table>
 
 </body>
