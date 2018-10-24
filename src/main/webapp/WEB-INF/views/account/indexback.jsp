@@ -8,41 +8,18 @@
 </head>
 <body>
 
-	<h3>Account Register</h3>
+	<h3>Register Form</h3>
 	<s:form method="post" commandName="account"
 		action="${pageContext.request.contextPath }/account/save">
-		<table cellpadding="2" cellspacing="2" border="0">
+		<table>
 			<tr>
 				<td>Username</td>
 				<td><s:input path="username" /></td>
 			</tr>
-			<tr valign="top">
+			<tr>
 				<td>Password</td>
-				<td><s:password path="password"
-						title="One Upper case, one special char, one number, total length 6 to 20 chars. Example: aA1!bcf" /></td>
-				<td><s:errors path="password" cssClass="error"></s:errors></td>
+				<td><s:password path="password" /></td>
 			</tr>
-			<tr valign="top">
-				<td>Age</td>
-				<td><s:input path="age" /></td>
-				<td><s:errors path="age" cssClass="error"></s:errors></td>
-			</tr>
-
-
-			<tr valign="top">
-				<td>Email</td>
-				<td><s:input path="email" /></td>
-				<td><s:errors path="email" cssClass="error"></s:errors></td>
-			</tr>
-
-			<tr valign="top">
-				<td>Website</td>
-				<td><s:input path="website" /></td>
-				<td><s:errors path="website" cssClass="error"></s:errors></td>
-			</tr>
-
-
-
 			<tr>
 				<td>Full Name</td>
 				<td><s:input path="fullName" /></td>
@@ -51,8 +28,6 @@
 				<td>Birthday</td>
 				<td><s:input path="birthday" /></td>
 			</tr>
-
-
 
 			<tr>
 				<td>Role</td>
